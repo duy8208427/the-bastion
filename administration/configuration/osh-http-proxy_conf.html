@@ -1,0 +1,446 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>osh-http-proxy.conf reference &mdash; The Bastion 3.04.00 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/thebastion.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Logs" href="../logs.html" />
+    <link rel="prev" title="bastion.conf reference" href="bastion_conf.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> The Bastion
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.04.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../presentation/index.html">Presentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/index.html">Installation &amp; Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../using/index.html">Using the bastion</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Administration</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Configuration files</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="bastion_conf.html">bastion.conf reference</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">osh-http-proxy.conf reference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#option-list">Option List</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#option-reference">Option Reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../logs.html">Logs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Bastion plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">The Bastion</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Administration</a> &raquo;</li>
+        
+          <li><a href="index.html">Configuration files</a> &raquo;</li>
+        
+      <li>osh-http-proxy.conf reference</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/administration/configuration/osh-http-proxy_conf.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="osh-http-proxy-conf-reference">
+<h1>osh-http-proxy.conf reference<a class="headerlink" href="#osh-http-proxy-conf-reference" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This module is optional, and disabled by default. To know more about the HTTP Proxy feature
+of The Bastion, please check <a class="reference internal" href="../../using/http_proxy.html"><span class="doc">HTTPS Proxy</span></a></p>
+</div>
+<div class="section" id="option-list">
+<h2>Option List<a class="headerlink" href="#option-list" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="http-proxy-configuration">
+<h3>HTTP Proxy configuration<a class="headerlink" href="#http-proxy-configuration" title="Permalink to this headline">¶</a></h3>
+<p>These options modify the behavior of the HTTP Proxy, an optional module of The Bastion</p>
+<ul class="simple">
+<li><a class="reference internal" href="#enabled"><span class="std std-ref">enabled</span></a></li>
+<li><a class="reference internal" href="#port"><span class="std std-ref">port</span></a></li>
+<li><a class="reference internal" href="#ssl-certificate"><span class="std std-ref">ssl_certificate</span></a></li>
+<li><a class="reference internal" href="#ssl-key"><span class="std std-ref">ssl_key</span></a></li>
+<li><a class="reference internal" href="#ciphers"><span class="std std-ref">ciphers</span></a></li>
+<li><a class="reference internal" href="#insecure"><span class="std std-ref">insecure</span></a></li>
+<li><a class="reference internal" href="#min-servers"><span class="std std-ref">min_servers</span></a></li>
+<li><a class="reference internal" href="#max-servers"><span class="std std-ref">max_servers</span></a></li>
+<li><a class="reference internal" href="#min-spare-servers"><span class="std std-ref">min_spare_servers</span></a></li>
+<li><a class="reference internal" href="#max-spare-servers"><span class="std std-ref">max_spare_servers</span></a></li>
+<li><a class="reference internal" href="#timeout"><span class="std std-ref">timeout</span></a></li>
+<li><a class="reference internal" href="#log-request-response"><span class="std std-ref">log_request_response</span></a></li>
+<li><a class="reference internal" href="#log-request-response-max-size"><span class="std std-ref">log_request_response_max_size</span></a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="option-reference">
+<h2>Option Reference<a class="headerlink" href="#option-reference" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>HTTP Proxy configuration<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="enabled">
+<span id="id2"></span><h4>enabled<a class="headerlink" href="#enabled" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">bool</span></code></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">false</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>Whether the HTTP proxy daemon daemon is enabled or not. If it's not enabled, it'll exit when started. Of course, if you want to enable this daemon, you should <strong>also</strong> configure your init system to start it for you. Both sysV-style scripts and systemd unit files are provided. For systemd, using <cite>systemctl enable osh-http-proxy.service</cite> should be enough. For sysV-style inits, it depends on the scripts provided for your distro, but usually <cite>update-rc.d osh-http-proxy defaults</cite> then <cite>update-rc.d osh-http-proxy enable</cite> should do the trick.</p>
+</div>
+<div class="section" id="port">
+<span id="id3"></span><h4>port<a class="headerlink" href="#port" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">int,</span> <span class="pre">1</span> <span class="pre">to</span> <span class="pre">65535</span></code></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">8443</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>The port to listen to. You can use ports &lt; 1024, in which case privileges will be dropped after binding, but please ensure your systemd unit file starts the daemon as root in that case.</p>
+</div>
+<div class="section" id="ssl-certificate">
+<span id="id4"></span><h4>ssl_certificate<a class="headerlink" href="#ssl-certificate" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">string</span></code></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">/etc/ssl/certs/ssl-cert-snakeoil.pem</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>The file that contains the server SSL certificate in PEM format. For tests, install the <code class="docutils literal notranslate"><span class="pre">ssl-cert</span></code> package and point this configuration item to the snakeoil certs (which is the default).</p>
+</div>
+<div class="section" id="ssl-key">
+<span id="id5"></span><h4>ssl_key<a class="headerlink" href="#ssl-key" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">string</span></code></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">/etc/ssl/private/ssl-cert-snakeoil.key</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>The file that contains the server SSL key in PEM format. For tests, install the <code class="docutils literal notranslate"><span class="pre">ssl-cert</span></code> package and point this configuration item to the snakeoil certs (which is the default).</p>
+</div>
+<div class="section" id="ciphers">
+<span id="id6"></span><h4>ciphers<a class="headerlink" href="#ciphers" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">string</span></code></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">&quot;ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256&quot;</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>The ordered list the TLS server ciphers, in <code class="docutils literal notranslate"><span class="pre">openssl</span></code> classic format. Use <code class="docutils literal notranslate"><span class="pre">openssl</span> <span class="pre">ciphers</span></code> to see what your system supports,
+an empty list leaves the choice to your openssl libraries default values (system-dependent)</p>
+</div>
+<div class="section" id="insecure">
+<span id="id7"></span><h4>insecure<a class="headerlink" href="#insecure" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">bool</span></code></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">false</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>Whether to ignore SSL certificate verification for the connection between the bastion and the devices</p>
+</div>
+<div class="section" id="min-servers">
+<span id="id8"></span><h4>min_servers<a class="headerlink" href="#min-servers" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">int,</span> <span class="pre">1</span> <span class="pre">to</span> <span class="pre">512</span></code></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">8</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>Number of child processes to start at launch</p>
+</div>
+<div class="section" id="max-servers">
+<span id="id9"></span><h4>max_servers<a class="headerlink" href="#max-servers" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">int,</span> <span class="pre">1</span> <span class="pre">to</span> <span class="pre">512</span></code></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">32</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>Hard maximum number of child processes that can be active at any given time no matter what</p>
+</div>
+<div class="section" id="min-spare-servers">
+<span id="id10"></span><h4>min_spare_servers<a class="headerlink" href="#min-spare-servers" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">int,</span> <span class="pre">1</span> <span class="pre">to</span> <span class="pre">512</span></code></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">8</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>The daemon will ensure that there is at least this number of children idle &amp; ready to accept new connections (as long as max_servers is not reached)</p>
+</div>
+<div class="section" id="max-spare-servers">
+<span id="id11"></span><h4>max_spare_servers<a class="headerlink" href="#max-spare-servers" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">int,</span> <span class="pre">1</span> <span class="pre">to</span> <span class="pre">512</span></code></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">16</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>The daemon will kill <em>idle</em> children to keep their number below this maximum when traffic is low</p>
+</div>
+<div class="section" id="timeout">
+<span id="id12"></span><h4>timeout<a class="headerlink" href="#timeout" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">int,</span> <span class="pre">1</span> <span class="pre">to</span> <span class="pre">3600</span></code></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">120</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>Timeout delay (in seconds) for the connection between the bastion and the devices</p>
+</div>
+<div class="section" id="log-request-response">
+<span id="id13"></span><h4>log_request_response<a class="headerlink" href="#log-request-response" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">bool</span></code></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">true</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>When enabled, the complete response of the device to the request we forwarded will be logged, otherwise we'll only log the response headers</p>
+</div>
+<div class="section" id="log-request-response-max-size">
+<span id="id14"></span><h4>log_request_response_max_size<a class="headerlink" href="#log-request-response-max-size" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">int,</span> <span class="pre">0</span> <span class="pre">to</span> <span class="pre">2^30</span> <span class="pre">(1</span> <span class="pre">GiB)</span></code></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">65536</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>This option only applies when <cite>log_request_response</cite> is true (see above). When set to zero, the complete response will be logged in the account's home log directory, including the body, regardless of its size. If set to a positive integer, the query response will only be partially logged, with full status and headers but the body only up to the specified size. This is a way to avoid turning off request response logging completely on very busy bastions, by ensuring logs growth don't get out of hand, as some responses to queries can take megabytes, with possibly limited added value to traceability.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../logs.html" class="btn btn-neutral float-right" title="Logs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="bastion_conf.html" class="btn btn-neutral float-left" title="bastion.conf reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, OVHcloud
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
